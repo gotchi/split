@@ -15,8 +15,8 @@ int main(int argc, char **argv)
 {
     FILE *file;
     OPTION_PARAM option;
-    char linebuf[LINEBUF_SIZE];
-    char *result;
+    char linebuf[LINEBUF_SIZE];     /* ファイル1行分の文字列バッファ */
+    char *result;                   /* fgets戻り値 */
 
     /* コマンドライン引数のチェック */
     if (getoptions(argc, argv, &option) == FALSE)
@@ -27,6 +27,11 @@ int main(int argc, char **argv)
     
     /* ファイル名のチェック */
     file - fopen(option.file_name, "r");
+    if (file == NULL)
+    {
+        printf("File open is invalid.");
+        return -1;
+    }
 
     /* ファイル内容を1行ずつ読み込み、splitを実行
      * split結果を表示する
@@ -35,12 +40,6 @@ int main(int argc, char **argv)
     {
     
     }
-    if (result == NULL)
-    {
-        /* エラー発生 */
-        return -1;
-    }
-
     return 0;
 }
 
