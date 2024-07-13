@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "define.h"
 
 /**
  * @brief split処理
@@ -9,6 +10,6 @@
  */
 char** split(char *string, char *resolve)
 {
-    
+
     return NULL;    /* error */
 }

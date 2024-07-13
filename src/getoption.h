@@ -14,4 +14,6 @@ typedef struct option_param
     char file_name[FILENAME_MAX];    /**< ファイル名 */
 } OPTION_PARAM, *POPTION_PARAM;
 
+int getoptions(int argc, char **argv, OPTION_PARAM *pOption);
+
 #endif

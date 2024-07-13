@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "define.h"
 #include "getoption.h"
 
 #define LINEBUF_SIZE    (1024)
@@ -18,12 +19,12 @@ int main(int argc, char **argv)
     char *result;
 
     /* コマンドライン引数のチェック */
-
-    if (option.show_version != 0)
+    if (getoptions(argc, argv, &option) == FALSE)
     {
         show_help();
         return 0;
     }
+    
     /* ファイル名のチェック */
     file - fopen(option.file_name, "r");
 
