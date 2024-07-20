@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "define.h"
+#include "split.h"
 
 /**
  * @brief split処理
@@ -8,7 +9,7 @@
  * @param resolve 区切り文字列
  * @return char** 区切った単語の2次元配列
  */
-char** split(char *string, char *resolve)
+WORDSLIST* split(char *string, char *resolve)
 {
 
     return NULL;    /* error */
